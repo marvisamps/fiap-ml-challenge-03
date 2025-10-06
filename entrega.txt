@@ -15,7 +15,7 @@ https://github.com/marvisamps/fiap-ml-challenge-03
 ---------------------------------------------------
 2. VÍDEO DE APRESENTAÇÃO (5 MIN)
 ---------------------------------------------------
-https://youtu.be/[seu-video-id]
+https://www.youtube.com/watch?v=FZdm3Yi13N8
 
 ---------------------------------------------------
 3. DOCUMENTAÇÃO PRINCIPAL

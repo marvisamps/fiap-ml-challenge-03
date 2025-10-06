@@ -29,23 +29,62 @@ cp env.example .env  # Ajuste se necessário
 # Ou criar manualmente com os valores em env.example
 ```
 
-## 🎯 Executar Pipeline Completo
+## 🎯 Execução Rápida (Windows - Recomendado)
+
+### Menu Interativo
+
+```powershell
+.\start.ps1
+```
+
+**Opções disponíveis:**
+- `[1]` 📊 Dashboard (Streamlit)
+- `[2]` 🚀 API (FastAPI)
+- `[3]` 🔄 Sincronizar Firebase
+- `[4]` ⚙️  Gerar Features
+- `[5]` 🤖 Treinar Modelo
+- `[6]` 🔍 Verificar Ambiente
+- `[7]` 📤 Commit e Push
+- `[8]` 🎬 Pipeline Completo
+
+### Scripts Individuais
+
+```powershell
+# Executar Dashboard (resolve PYTHONPATH automaticamente)
+.\run-dashboard.ps1
+
+# Executar API
+.\run-api.ps1
+
+# Verificar tudo antes de apresentar
+.\pre-apresentacao-checklist.ps1
+
+# Commit e push automático
+.\commit-and-push.ps1
+```
+
+---
+
+## 🐧 Execução Manual (Linux/Mac ou Detalhado)
+
+⚠️ **Importante:** Sempre defina `PYTHONPATH=.` antes de executar scripts Python
 
 ```bash
-# 1. Gerar dados simulados (20k eventos)
-python data/simulate.py
+# 1. Gerar dados simulados (20k eventos) - OU sincronizar Firebase
+PYTHONPATH=. python data/simulate.py
+# PYTHONPATH=. python data/firestore_direct.py
 
 # 2. Extrair features (User×Recipe)
-python pipelines/features.py
+PYTHONPATH=. python pipelines/features.py
 
 # 3. Treinar modelo LambdaMART
-python models/train.py
+PYTHONPATH=. python models/train.py
 
 # 4. Iniciar API (porta 8000)
-uvicorn api.main:app --reload
+PYTHONPATH=. uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
 
 # 5. Iniciar Dashboard (porta 8501)
-streamlit run dash/app.py
+PYTHONPATH=. streamlit run dash/app.py
 ```
 
 ## 🌐 Acessar Aplicação

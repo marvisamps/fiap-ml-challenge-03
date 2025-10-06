@@ -113,10 +113,13 @@ class FirestoreSync:
             count = 0
             
             # Buscar todos os usuários
-            users = self.db.collection('users').stream()
+            users = list(self.db.collection('users').stream())
+            logger.info(f"🔍 Processando {len(users)} usuários...")
             
-            for user_doc in users:
+            for idx, user_doc in enumerate(users, 1):
                 user_id = user_doc.id
+                if idx % 10 == 0:
+                    logger.info(f"   Processando usuário {idx}/{len(users)}...")
                 
                 # Navegar em favoriteLists de cada usuário
                 favorite_lists = self.db.collection('users').document(user_id).collection('favoriteLists').stream()
