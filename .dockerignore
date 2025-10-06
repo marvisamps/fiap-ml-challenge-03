@@ -1,0 +1,8 @@
+.venv
+__pycache__/
+*.parquet
+data/events.jsonl
+artifacts/*
+!artifacts/.keep
+.env
+

@@ -1,0 +1,18 @@
+[project]
+name = "recipe-recommender"
+version = "0.1.0"
+description = "Sistema de recomendação de receitas"
+requires-python = ">=3.8"
+
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+
+[tool.isort]
+profile = "black"
+line_length = 88
+

@@ -1,0 +1,26 @@
+.venv
+__pycache__/
+artifacts/*
+!artifacts/.keep
+data/*.parquet
+data/events.jsonl
+.env
+
+# Firebase / Google Cloud
+serviceAccountKey.json
+*-firebase-adminsdk-*.json
+.firebaserc
+firebase-debug.log
+firebase-debug.*.log
+
+# Cloud Functions
+cloud_functions/functions/node_modules/
+cloud_functions/functions/.runtimeconfig.json
+
+# Secrets
+*.pem
+*.key
+credentials/
+
+docs/
+
